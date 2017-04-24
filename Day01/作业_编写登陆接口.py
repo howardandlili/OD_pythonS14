@@ -3,7 +3,15 @@
 __author__ = 'Howie'
 '''
 作业要求：
-1.
+1.输入用户密码
+2.认证后显示欢迎信息
+3.输错三次后锁定
+'''
+##############################
+'''
+readme:
+这是一个登陆接口脚本，要求输入正确的用户名和密码，如果输入三次失败后将被锁定。
+现在还有一个BUG就是三次输入错误的时候只会调取最一次的用户名来锁定
 '''
 account_file = 'user.txt'
 lock_file = 'account_lock.txt'
@@ -11,7 +19,7 @@ userpass = 'F'
 count = 0
 while userpass == 'F' and count <3:
     Username = input('输入用户名：')
-    Password = input('输入密码')
+    Password = input('输入密码：')
     count +=1
     with open(lock_file,'r') as f: #打开锁定用户列表
         for line in f.readlines(): #遍历文档每一行
