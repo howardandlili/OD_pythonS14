@@ -11,7 +11,7 @@ __author__ = 'Howie'
 '''
 readme:
 这是一个登陆接口脚本，要求输入正确的用户名和密码，如果输入三次失败后将被锁定。
-现在还有一个BUG就是三次输入错误的时候只会调取最一次的用户名来锁定
+现在还有一个BUG就是三次输入错误的时候只会调取最一次的用户名来锁定。
 '''
 account_file = 'user.txt'
 lock_file = 'account_lock.txt'
