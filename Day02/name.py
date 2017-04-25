@@ -12,7 +12,7 @@ print('浅拷贝后：',name2)
 names[2] = '王五'
 names[3][0] = 'LILI'
 print('原列表：',names)
-print('浅拷贝后再修改原列表的子列表：',name2)
+print('浅拷贝后再修改原列表的子列表：的',name2)
 
 #如果想要完全复制的话要导入一个模块
 import copy
