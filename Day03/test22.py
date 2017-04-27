@@ -1,7 +1,24 @@
 #!/user/bin/env python
 # -*- coding:utf-8 -*-
 __author__ = 'Howie'
-import time
-time_format = '%Y-%m-%d %x'
-time_current = time.strftime(time_format)
-print(time_current,type(time_current))
+
+school = "Oldboy edu."
+
+
+def change_name(name):
+    global school
+    school = "Mage Linux"
+    print("before change",name,school)
+    name ="Alex li" #这个函数就是这个变量的作用域
+    age =23
+    print("after change",name)
+
+
+
+print("school:",school)
+
+name = "alex"
+change_name(name)
+print(name)
+
+print("age",age)
