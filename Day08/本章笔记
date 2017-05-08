@@ -1,0 +1,89 @@
+回忆上节课内容
+
+
+三种方法
+静态方法
+    1.与类无关，不能使用类中的属性与方法，不需要实用seif
+
+类方法
+    1.只能访问类变量，不能使用类变量
+属性方法
+    使用：@property
+    把一个方法变成一个静态属性
+    例如：
+    调用flight.status
+    当需要赋值时
+    @status.setter
+    flight.status = 3
+    当需要删除时候
+    @status.deleter
+
+
+反射
+    发射就是利用str去匹配类名字（很重要）
+    获取
+    getattr(obj.str)
+    赋值~（这个忘记了要回去看看）
+    setattr
+    判断类是否存在
+    hasattr(obj,str)
+__new__
+
+只需要知道new是优先__init__执行就可以了·其实new是创建实例的
+__call__
+只需要知道如何使用就可以了
+foo()()记得是两个（）
+
+
+异常处理：
+
+try
+    .......
+except (KeyError,ValueError) as e:
+    print('什么什么错误了'，e)
+except exception as e :
+    这个一般放在最后的，这个是说未知错误
+else：
+    （没有发生什么错误）就执行
+finally:
+    (无论如何正确与否都执行)
+daise：
+    自己触发自己写的异常
+
+
+
+Socket
+socket 就是把TCP 还有 udp 做了一个封装
+我们只需要send和recv就可以了
+要用到scoket起码都是有服务端和客户端的
+那么服务端需要做什么呢？
+
+
+1.建立一个实例
+socket = socket.socket(AF.INET(地址簇),socket.SOCKET_STREAM(tcp/ip协议))
+一般都是socket = scocket.socket()
+2.绑定IP端口
+server.bind(('localhost',9999))
+3.监听
+server.listen()
+4.等待请求并且把请求做个标记和实例
+conn,addr = server.accept() #在这里就开始阻塞了，就是等于一个人在打电话另外一个人打不进来
+5.处理接收到的data
+data = conn,recv(1024)接受数据大小官方建议是8k 就是8192最好就写这个数
+当客户端断开的时候那么下一个接收到的就是一个空值，这样这里如果上面做了循环的话这里就会出现死循环那么就需要
+判断这里如果为空的话就跳出去
+6.返回处理结果data
+conn.send(data)
+7.关闭socket
+server.close
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+客户端：
+client
+
+1.首先还是要建立一个socket的实例
+client = sco
+
+
+
