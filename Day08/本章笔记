@@ -61,7 +61,7 @@ socket 就是把TCP 还有 udp 做了一个封装
 
 1.建立一个实例
 socket = socket.socket(AF.INET(地址簇),socket.SOCKET_STREAM(tcp/ip协议))
-一般都是socket = scocket.socket()
+一般都是socket = socket.socket()
 2.绑定IP端口
 server.bind(('localhost',9999))
 3.监听
@@ -83,7 +83,22 @@ server.close
 client
 
 1.首先还是要建立一个socket的实例
-client = sco
+client = socket.socket()
+2.用实例连接服务端
+client.connct('localhost',9999)
+3.用实例来发送数据
+client.send(data)
+4.再接收返回的信息
+client.recv(1024)
+
+
+
+
+socket 还有一个必须要注意的就是粘包~
+在有连续两次的send的时候就必须把他们分开~
+可以利用sleep(0.5)这样的，但是这样太笨了
+那么就可以在中间加插一个要求对方放回就可以
+wiat_awk = conn.recv(1024)
 
 
 
