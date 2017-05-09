@@ -1,0 +1,7 @@
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+__author__ = 'Howie'
+import  paramiko
+
+ssh = paramiko.SSHClient
+
