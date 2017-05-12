@@ -12,12 +12,12 @@ event = threading.Event()
 def lingter():
     count = 1
     while True:
-        if count >=0 and count<10:
+        if count >0 and count<=5:
             event.set()
-            print('绿灯',(10 - count))
-        elif count>=10 and count<15:
+            print('绿灯',(5 - count))
+        elif count>5 and count<=10:
             event.clear()
-            print('红灯',15-count)
+            print('红灯',10-count)
         else:
             count = 0
         time.sleep(1)
