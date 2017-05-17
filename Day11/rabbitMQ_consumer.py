@@ -11,7 +11,7 @@ import pika
 
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(
-                                            host='10.88.1.108',
+                                            host='124.172.245.95',
                                                                ))
 
 #建立通道
