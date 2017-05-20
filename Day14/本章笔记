@@ -1,0 +1,47 @@
+前端的东西~
+
+
+HTML
+    1、他就是一套可以被浏览器可以认识的规则
+    2、开发者：
+        学习html规则
+        开发后台程序
+            -写html文件也就是模板~因为到时候相同的地方会根据不同的数据发生变化
+            -获取数据库数据，然后替换到html相对应的位置（也就是人家说的web框架）
+    3、编写代码
+    4、本地测试
+        可直接打开也可以pycharm打开
+    -大概知道20个标签就可以应付大多数的需求
+    5、标签分类
+        自闭和标签
+        <mate>这样就是自闭和标签
+        主动闭合标签
+    6、html标签
+        hread标签
+            mate标签，他包括是编码，刷新，转跳，关键字，描述，兼容
+            title标签，就是标题
+            link
+            style
+            script
+        body（重要标签）
+            -图标，&nbsp; &lt; &gt; (很多很多不需要记得)
+            -p标签 段落每个段落会被一个空行分开
+            -br换行标签，只是换行
+            -h[1-6]标签字体大小有大到小
+            -div标签（也是一个白板利用率最高）
+            所有标签大约分两类，一个是块标签就是一个会占一行，一个是行内标签，有多大就占多大
+            -span（就是行内标签）（就是一个白板不带任何属性）
+            标签的之间是可以嵌套的
+            标签的意义，css操作，js比较好找到，简单来说就方便了复杂的操作
+            -input
+                input type='text' name=‘’  普通文本，name就是字典的key
+                input type='password'      密码
+                input type='submit' value='***' 按钮~而且可以提交value是框内容
+                input type='button' value='***' 按钮但是不做操作
+                input type='radio'  name(当name一样的时候会互斥) value会被作为选中值提交
+                input type="checkbox 多选提交的
+                input type="file" 必须和<form enctype="multipart/form-data">一起使用
+                <input type="reset" value="重置">
+CSS
+    -颜色
+    -位置
