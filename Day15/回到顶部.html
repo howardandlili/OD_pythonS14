@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部</title>
+</head>
+<body>
+    <div onclick="GoTop();" style="height: 50px;width: 50px;background-color: black;color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    ">
+        回到顶部
+    </div>
+
+    <div style="background-color: #6ea3ff;height: 5000px">
+        内容
+    </div>
+    <script>
+        function GoTop(){
+            document.body.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
