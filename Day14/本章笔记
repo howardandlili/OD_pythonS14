@@ -33,15 +33,123 @@ HTML
             -span（就是行内标签）（就是一个白板不带任何属性）
             标签的之间是可以嵌套的
             标签的意义，css操作，js比较好找到，简单来说就方便了复杂的操作
-            -input
+            -input 他和from配合实用！！！！！这个很重要
                 input type='text' name=‘’  普通文本，name就是字典的key
                 input type='password'      密码
                 input type='submit' value='***' 按钮~而且可以提交value是框内容
                 input type='button' value='***' 按钮但是不做操作
                 input type='radio'  name(当name一样的时候会互斥) value会被作为选中值提交
-                input type="checkbox 多选提交的
+                input type="checkbox 多选提交的 check是默认
                 input type="file" 必须和<form enctype="multipart/form-data">一起使用
                 <input type="reset" value="重置">
+                <textarea name=‘达到’>默认值</textarea>多行输入 他的默认值是放在中间的
+                select标签下拉菜单
+                    option value selected
+            a标签
+                -跳转
+                -锚
+                    href就是要跳到的时候记得是加# ID=i1是跳到的地方
+            img标签
+                -src（资源）就是图片的地址
+                -alt 当打不开的时候会显示名字
+                -title 当鼠标放上面会显示文章
+            列表标签
+                -ul 用点开头
+                -ol 用数字开头
+                上面两个都是和li配合来用的
+                -dl是配合dt主标题dd小标题
+            表格
+                -table
+                    -thead
+                        -th 这个表头
+                    -tbody
+                        -tr 这个是行
+                        -td 这个是列 colspan="3"横向占用几格 rowspan="2"纵向占用几格
+
+
+
 CSS
-    -颜色
-    -位置
+
+    在标签上设置style属性：
+        background-color: #2459a2;
+        height: 48px;
+        ...
+
+    编写css样式：
+        1. 标签的style属性
+        2. 写在head里面 style标签中写样式
+            - id选择区
+                  #i1{
+                    background-color: #2459a2;
+                    height: 48px;
+                  }
+
+            - class选择器 ******
+
+                  .名称{
+                    ...
+                  }
+
+                  <标签 class='名称'> </标签>
+
+            - 标签选择器
+                    div{
+                        ...
+                    }
+
+
+                    所有div设置上此样式
+
+            - 层级选择器（空格） ******
+                   .c1 .c2 div{
+
+                   }
+            - 组合选择器（逗号） ******
+                    #c1,.c2,div{
+
+                   }
+
+            - 属性选择器 ******
+                   对选择到的标签再通过属性再进行一次筛选
+                   .c1[n='alex']{ width:100px; height:200px; }
+
+            PS:
+                - 优先级，标签上style优先，编写顺序，就近原则
+
+        2.5 css样式也可以写在单独文件中
+            <link rel="stylesheet" href="commons.css" />
+
+        3、注释
+            /*   */
+
+        4、边框
+             - 宽度，样式，颜色  (border: 4px dotted red;)
+             - border-left
+
+        5、
+            height，         高度 百分比
+            width，          宽度 像素，百分比
+            text-align:ceter, 水平方向居中
+            line-height，垂直方向根据标签高度
+            color、     字体颜色
+            font-size、 字体大小
+            font-weight 字体加粗
+
+        6、float
+            让标签浪起来，块级标签也可以堆叠
+            老子管不住：
+                <div style="clear: both;"></div>
+
+        7、display
+            display: none; -- 让标签消失
+            display: inline;
+            display: block;
+            display: inline-block;
+                     具有inline,默认自己有多少占多少
+                     具有block，可以设置无法设置高度，宽度，padding  margin
+            ******
+            行内标签：无法设置高度，宽度，padding  margin
+            块级标签：设置高度，宽度，padding  margin
+
+
+        8、padding  margin(0,auto)
