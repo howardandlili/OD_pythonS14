@@ -99,8 +99,20 @@
                 checkbox.checked = false;
             }
         }
-        function ReverseAll() {d
-
+        function ReverseAll() {
+                        var tbody = document.getElementById('tb');
+            //获取到所有的tr
+            var sr_list = tbody.children;
+            for (var i=0;i<sr_list.length;i++){
+                var current_tr = sr_list[i];
+                var checkbox = current_tr.children[0].children[0];
+                if (checkbox.checked){
+                    checkbox.checked = false;
+                }
+                else {
+                    checkbox.checked = true;
+                }
+            }
         }
     </script>
 </body>
