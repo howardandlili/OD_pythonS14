@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多选</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <input  type="button" value="全选" onclick="checkAll();"/>
+    <input  type="button" value="反选" onclick="reverAll();"/>
+    <input  type="button" value="取消" onclick="cancleAll();"/>
+    <div>
+        <table id="tb" border="1">
+            <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>ip</th>
+                    <th>端口</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"/></td>
+                    <td>192.168.0.1</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"/></td>
+                    <td>192.168.0.2</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"/></td>
+                    <td>192.168.0.3</td>
+                    <td>22</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        function checkAll() {
+            $('#tb :checkbox').prop('checked',true)
+        }
+        function cancleAll() {
+            $('#tb :checkbox').prop('checked',false)
+        }
+        function reverAll() {
+            $('#tb :checkbox').each(function () {
+//                if (this.checked){
+//                    this.checked = false;
+//                }else {
+//                    this.checked = true;
+//                }
+                var k = $(this).prop('checked')?false:true;
+                $(this).prop('checked',k)
+//                var k = this.checked?false:true;
+//                this.checked = k
+
+            })
+        }
+
+
+    </script>
+</body>
+</html>
