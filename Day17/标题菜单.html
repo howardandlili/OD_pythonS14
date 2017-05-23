@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单</title>
+    <style>
+        .herder{
+            background-color: blue
+        }
+        .content{
+            min-height: 80px;
+            background-color: #6ea3ff;
+        }
+        .hede{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div style=" height: 400px;width: 200px; border: solid #2f6eff ">
+        <div class="item">
+            <div class="herder">一级标题</div>
+            <div class="content hede">一级菜单</div>
+        </div>
+        <div class="item">
+            <div class="herder ">二级标题</div>
+            <div class="content hede">一级菜单</div>
+        </div>
+        <div class="item">
+            <div class="herder ">三级标题</div>
+            <div class="content hede">一级菜单</div>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $('.herder').click(function () {
+            $(this).next().removeClass('hede').parent().siblings().find('.content').addClass('hede');
+//            console.log($(this).next().removeClass('hede').parent().siblings().find('.content'))
+        })
+    </script>
+</body>
+</html>
