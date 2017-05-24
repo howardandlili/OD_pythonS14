@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        .form{
+            display: none;
+        }
         .popup{
             position: fixed;
             top: 50%;
@@ -33,7 +36,7 @@
 <body>
     <div>
         <div>
-            <input type="button" value="添加" />
+            <input id="add" type="button" value="添加" />
         </div>
         <table border="1">
             <thead>
@@ -73,26 +76,37 @@
                     <td class="edit">编辑</td>
                     <td class="del">删除</td>
                 </tr>
+                <tr class="form">
+                    <td target="host"></td>
+                    <td target="ip"></td>
+                    <td target="port"></td>
+                    <td class="edit">编辑</td>
+                    <td class="del">删除</td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <div class="popup hide">
-        主机：<input id="host" type="text"/><br>
-        端口：<input id="port" type="text"/><br>
-        IP：<input id="ip" type="text"/>
-        <p>
-            <input class="confirm" type="button" value="确定"/>
-            <input class="cancle" type="button" value="取消"/>
-        </p>
+    <div class="pop">
+        <div class="popup hide">
+            <div id="inp">
+                主机：<input id="host" type="text"/>
+                端口：<input id="port" type="text"/>
+                IP：<input id="ip" type="text"/>
+            </div>
+            <p>
+                <input class="confirm" type="button" value="确定"/>
+                <input class="cancle" type="button" value="取消"/>
+            </p>
+        </div>
+        <div class="shadow hide"></div>
     </div>
-    <div class="shadow hide"></div>
 
 
 
     <script src="js/jquery-1.12.4.js"></script>
     <script>
         $('.edit').click(function () {
-            $('.hide').removeClass('hide');//去掉隐藏
+            $('.pup .hide').removeClass('hide');//去掉隐藏
             var tds = $(this).prevAll();
             tds.each(function () {
                 var n = $(this).attr("target"); //获取属性名字
@@ -104,6 +118,22 @@
             })
         });
         $('.cancle').click(function () {
+            $('.popup,.shadow').addClass('hide')
+        });
+        $('.del').click(function () {
+            $(this).parent().remove()
+        });
+        $('#add').click(function () {
+            $('.pop .hide').removeClass('hide');
+        })
+        $('.confirm').click(function () {
+            var tbs = $('#inp').children();
+                tbs.each(function () {
+                   var n = $(this).attr('id');
+                   var con = $(this).text();
+                   console.log(n)
+            });
+            var n_tb = $('.form').clone().appendTo('tbody').removeClass('form').children();
             $('.popup,.shadow').addClass('hide')
         })
     </script>
