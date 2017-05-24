@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .herder{
+            width: 780px;
+            margin: 0 auto;
+        }
+        .active{
+            background-color: #2e9937;
+        }
+        .hide{
+            display: none;
+        }
+        .menu{
+            background-color: #6ea3ff;
+            height: 38px;
+            line-height: 38px;
+        }
+        .menu .menu_item{
+            float: left;
+            border-right: 1px solid #9925e1;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+        .content{
+            min-height: 100px;
+            border: 1px solid #1a8b99;
+        }
+    </style>
+</head>
+<body>
+    <div class="herder">
+        <div class="menu">
+            <div class="menu_item" m="i1">菜单一</div>
+            <div class="menu_item" m="i2">菜单二</div>
+            <div class="menu_item" m="i3">菜单三</div>
+        </div>
+        <div class="content">
+            <div c="i1">内容1</div>
+            <div c="i2" class="hide">内容2</div>
+            <div c="i3" class="hide">内容3</div>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $('.menu_item').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            var m = $(this).attr('m');//把标签属性找出来
+            var k = $('.content').children('[c="'+m+'"]').removeClass('hide').siblings().addClass('hide');
+        })
+    </script>
+</body>
+</html>
