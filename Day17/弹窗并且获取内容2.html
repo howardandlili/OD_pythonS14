@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .popup{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 400px;
+            background-color: white;
+            margin-top: -250px;
+            margin-left: -200px;
+            z-index: 10;
+        }
+        .hide{
+            display: none;
+        }
+        .shadow{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <input type="button" value="添加" />
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>主机</th>
+                    <th>IP</th>
+                    <th>端口</th>
+                    <th colspan="2">操作</th>
+                </tr>
+            </thead>
+            <tbody class="tb">
+                <tr>
+                    <td target="host">192.168.1.11</td>
+                    <td target="ip">192.168.1.11</td>
+                    <td target="port">22</td>
+                    <td class="edit">编辑</td>
+                    <td class="del">删除</td>
+                </tr>
+                <tr>
+                    <td target="host">192.168.1.12</td>
+                    <td target="ip">192.168.1.12</td>
+                    <td target="port">22</td>
+                    <td class="edit">编辑</td>
+                    <td class="del">删除</td>
+                </tr>
+                <tr>
+                    <td target="host">192.168.1.13</td>
+                    <td target="ip">192.168.1.13</td>
+                    <td target="port">22</td>
+                    <td class="edit">编辑</td>
+                    <td class="del">删除</td>
+                </tr>
+                <tr>
+                    <td target="host">192.168.1.14</td>
+                    <td target="ip">192.168.1.14</td>
+                    <td target="port">22</td>
+                    <td class="edit">编辑</td>
+                    <td class="del">删除</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="popup hide">
+        主机：<input id="host" type="text"/><br>
+        端口：<input id="port" type="text"/><br>
+        IP：<input id="ip" type="text"/>
+        <p>
+            <input class="confirm" type="button" value="确定"/>
+            <input class="cancle" type="button" value="取消"/>
+        </p>
+    </div>
+    <div class="shadow hide"></div>
+
+
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $('.edit').click(function () {
+            $('.hide').removeClass('hide');//去掉隐藏
+            var tds = $(this).prevAll();
+            tds.each(function () {
+                var n = $(this).attr("target"); //获取属性名字
+                var con = $(this).text(); //获取内容
+                var tmp = '#'+n; //把获取的属性名字变成字符串
+
+                $(tmp).val(con);
+                console.log(n,con)
+            })
+        });
+        $('.cancle').click(function () {
+            $('.popup,.shadow').addClass('hide')
+        })
+    </script>
+</body>
+</html>
