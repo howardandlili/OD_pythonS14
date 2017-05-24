@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="switch" type="button" value="开关"/>
+    <a id="c1" class="hide">dsadsadsadas</a>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $('#switch').click(function () {
+            $('#c1').toggleClass('hide');
+        })
+    </script>
+</body>
+</html>
