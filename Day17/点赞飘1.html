@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="item">
+        <span>赞</span>
+
+    </div>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $('.item').click(function () {
+            var tag = document.createElement('span');
+            $(tag).text('+1');
+
+            $(this).append(tag)
+        })
+
+    </script>
+</body>
+</html>
