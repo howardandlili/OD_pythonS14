@@ -125,15 +125,19 @@
         });
         $('#add').click(function () {
             $('.pop .hide').removeClass('hide');
-        })
+        });
         $('.confirm').click(function () {
+            var form = $('.form').clone().appendTo('tbody').removeClass('form');
             var tbs = $('#inp').children();
                 tbs.each(function () {
                    var n = $(this).attr('id');
-                   var con = $(this).text();
-                   console.log(n)
+                   var con = $(this).val();
+                   n_tb(n,con);
             });
-            var n_tb = $('.form').clone().appendTo('tbody').removeClass('form').children();
+            function n_tb (n,con) {
+                $()
+                console.log(n,con,form)
+            }
             $('.popup,.shadow').addClass('hide')
         })
     </script>
